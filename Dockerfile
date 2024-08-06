@@ -1,12 +1,30 @@
-FROM node:lts-alpine as runtime
+# Base image
+FROM node:18-alpine as build
+
+# Set working directory
 WORKDIR /app
 
-COPY . .
+# Copy dependency files and install dependencies
+COPY package*.json ./
+RUN npm ci
 
-RUN npm install
+# Copy source code and build
+COPY . .
 RUN npm run build
 
-ENV HOST=0.0.0.0
-ENV PORT=4321
-EXPOSE 4321
-CMD node ./dist/server/entry.mjs
+# Production image
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy only built files and necessary production dependencies
+COPY --from=build /app/dist /app/dist
+COPY --from=build /app/package*.json ./
+
+RUN npm ci --only=production
+
+# Expose port
+EXPOSE 3000
+
+# Start the server
+CMD ["node", "./dist/server/entry.mjs"]
