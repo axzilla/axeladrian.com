@@ -24,7 +24,7 @@ COPY --from=build /app/package*.json ./
 RUN npm ci --only=production
 
 # Expose port
-EXPOSE 3000
+EXPOSE 4321
 
 # Start the server
 CMD ["node", "./dist/server/entry.mjs"]
