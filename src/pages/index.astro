@@ -7,35 +7,48 @@ import Intro from "~/components/intro.astro";
 import End from "~/components/end.astro";
 import Splash from "~/components/splash.astro";
 import "~/styles/index.css";
+import { ViewTransitions } from "astro:transitions";
 
-const { generator, site } = Astro;
-// const image = new URL("social.jpg", site);
+const { generator } = Astro;
+const title = "Axel Adrian - Ich. Mache. Software.";
 const description = "Axel Adrian - Ich. Mache. Software.";
+
+const siteUrl = Astro.url.origin;
+const image = new URL("/favicon.png", siteUrl).toString();
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 ---
 
 <!doctype html>
-<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+<html lang="de" class="h-full motion-safe:scroll-smooth" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.png" type="image/svg+xml" />
+    <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={generator} />
 
-    <title>Axel Adrian - Ich. Mache. Software.</title>
+    <title>{title}</title>
     <meta name="description" content={description} />
 
-    <!-- social media -->
-    <meta property="og:title" content="Axel Adrian - Ich. Mache. Software." />
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <!-- <meta property="og:image" content={image} /> -->
-    <meta property="og:url" content={site} />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url.href} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <ViewTransitions />
 
     <!-- initialize theme -->
     <script is:inline>
       const themeSaved = localStorage.getItem("theme");
-
       if (themeSaved) {
         document.documentElement.dataset.theme = themeSaved;
       } else {
@@ -44,7 +57,6 @@ const description = "Axel Adrian - Ich. Mache. Software.";
         ).matches;
         document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
       }
-
       window
         .matchMedia("(prefers-color-scheme: dark)")
         .addEventListener("change", (event) => {
