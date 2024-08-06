@@ -1,0 +1,42 @@
+---
+import { Icon } from "astro-icon/components";
+import ContentSection from "~/components/content-section.astro";
+import type { FooterLink } from "~/types";
+
+const links: Array<FooterLink> = [
+  {
+    url: "https://github.com/axzilla",
+    icon: "fa-brands:github",
+  },
+  {
+    url: "mailto:hello@axeladrian.com",
+    icon: "fa-solid:envelope",
+  },
+  {
+    url: "https://twitter.com/_axzilla",
+    icon: "fa-brands:twitter",
+  },
+];
+---
+
+<ContentSection title="Ende" id="end">
+  <Fragment slot="lead">
+    Kurzfristige Einsätze oder langfristige Engagements? Ich freue mich auf
+    deine Nachricht!
+  </Fragment>
+  <ul class="flex gap-8">
+    {
+      links.map((link) => (
+        <li>
+          <a
+            class="flex size-8 items-center justify-center hover:text-primary"
+            href={link.url}
+            target="_blank"
+          >
+            <Icon class="size-full" name={link.icon} />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>

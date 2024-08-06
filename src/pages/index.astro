@@ -1,18 +1,16 @@
 ---
 import "@fontsource-variable/inter";
-import Compatibility from "~/components/compatibility.astro";
+import Tools from "~/components/tools.astro";
 import Features from "~/components/features.astro";
-import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
 import Intro from "~/components/intro.astro";
-import Showcase from "~/components/showcase.astro";
+import End from "~/components/end.astro";
 import Splash from "~/components/splash.astro";
 import "~/styles/index.css";
 
 const { generator, site } = Astro;
 // const image = new URL("social.jpg", site);
-const description =
-  "Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.";
+const description = "Axel Adrian - Ich. Mache. Software.";
 ---
 
 <!doctype html>
@@ -27,7 +25,7 @@ const description =
     <meta name="description" content={description} />
 
     <!-- social media -->
-    <meta property="og:title" content="Astro" />
+    <meta property="og:title" content="Axel Adrian - Ich. Mache. Software." />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
     <!-- <meta property="og:image" content={image} /> -->
@@ -66,9 +64,8 @@ const description =
     <div class="space-y-24 px-8 py-32">
       <Intro />
       <Features />
-      <Compatibility />
-      <Showcase />
+      <Tools />
+      <End />
     </div>
-    <Footer />
   </body>
 </html>

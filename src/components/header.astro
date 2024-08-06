@@ -4,9 +4,10 @@ import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
 
 const navItems: Array<NavItem> = [
-  { title: "Features", url: "#features" },
-  { title: "Compatibility", url: "#compatibility" },
-  { title: "Showcase", url: "#showcase" },
+  { title: "Moin", url: "#intro" },
+  { title: "Mein Handwerk", url: "#features" },
+  { title: "Meine Werkzeuge", url: "#tools" },
+  { title: "Ende", url: "#end" },
 ];
 ---
 
@@ -14,7 +15,7 @@ const navItems: Array<NavItem> = [
   id="page-header"
   class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
 >
-  <a class="flex items-center gap-3 hover:!text-default" href="#">
+  <a class="flex items-center gap-3 hover:!text-primary" href="#">
     <Icon name="logo" class="size-10" />
   </a>
   <div>
@@ -24,7 +25,7 @@ const navItems: Array<NavItem> = [
           {
             navItems.map(({ title, url }) => (
               <li>
-                <a class="text-sm" href={url}>
+                <a class="font-bold text-sm hover:text-primary" href={url}>
                   {title}
                 </a>
               </li>
@@ -63,7 +64,10 @@ const navItems: Array<NavItem> = [
               {
                 navItems.map(({ title, url }) => (
                   <li>
-                    <a class="block py-4 text-center text-xl" href={url}>
+                    <a
+                      class="block py-4 text-center font-bold text-xl hover:text-primary"
+                      href={url}
+                    >
                       {title}
                     </a>
                   </li>

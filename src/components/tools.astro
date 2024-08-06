@@ -1,0 +1,75 @@
+---
+import ToolsList from "~/components/tools-list.astro";
+import ContentSection from "~/components/content-section.astro";
+import type { ToolsItem } from "~/types";
+
+const tools: Array<ToolsItem> = [
+  {
+    title: "Go",
+    icon: "tools/go",
+  },
+  {
+    title: "JavaScript",
+    icon: "tools/javascript",
+  },
+  {
+    title: "Typescript",
+    icon: "tools/typescript",
+  },
+  {
+    title: "Flutter",
+    icon: "tools/flutter",
+  },
+  {
+    title: "React",
+    icon: "tools/react",
+  },
+  {
+    title: "Next.js",
+    icon: "tools/nextjs",
+  },
+  {
+    title: "Electron",
+    icon: "tools/electron",
+  },
+  {
+    title: "PostgreSQL",
+    icon: "tools/postgresql",
+  },
+  {
+    title: "SQLite",
+    icon: "tools/sqlite",
+  },
+  {
+    title: "MongoDB",
+    icon: "tools/mongodb",
+  },
+  {
+    title: "Astro",
+    icon: "tools/astro",
+  },
+  {
+    title: "Svelte",
+    icon: "tools/svelte",
+  },
+  {
+    title: "Vue",
+    icon: "tools/vue",
+  },
+  {
+    title: "Node.js",
+    icon: "tools/nodejs",
+  },
+  {
+    title: "Docker",
+    icon: "tools/docker",
+  },
+];
+---
+
+<ContentSection title="Meine Werkzeuge" id="tools">
+  <Fragment slot="lead"
+    >Moderne <span class="text-primary">Lösungen</span> für komplexe Herrausforderungen.
+  </Fragment>
+  <ToolsList items={tools} />
+</ContentSection>

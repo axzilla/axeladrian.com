@@ -5,19 +5,18 @@ import type { FeatureItem } from "~/types";
 
 const features: Array<FeatureItem> = [
   {
-    title: "Konzeption",
-    description:
-      "Ich erarbeite maßgeschneiderte Lösungsansätze. Von der ersten Idee bis zum detaillierten Projektplan.",
+    title: "Konzeption & Strategie",
+    description: "Ich entwickle maßgeschneiderte Lösungen für dein Projekt.",
     icon: "mdi:handshake",
   },
   {
-    title: "Implementierung",
+    title: "Entwicklung & Implementierung",
     description:
       "Ich setze Konzepte in effizienten Code um. Dabei nutze ich diverse Sprachen und Frameworks für Front- und Backend..",
     icon: "mdi:feather",
   },
   {
-    title: "Qualitätssicherung",
+    title: "Deployment & Wartung",
     description:
       "Ich gewährleiste Qualität durch gründliches Testen und löse komplexe Bugs effizient und nachhaltig..",
     icon: "mdi:directions-fork",
@@ -47,7 +46,7 @@ const features: Array<FeatureItem> = [
   <Fragment slot="lead">
     Mit <span class="text-primary">Kreativität</span>
     und <span class="text-primary">Code</span>
-    bringe ich deine Vision zum Leben .
+    bringe ich deine Vision zum Leben.
     <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {
         features.map(({ title, description, icon }) => (

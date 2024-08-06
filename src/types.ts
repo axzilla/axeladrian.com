@@ -1,7 +1,6 @@
-export interface CompatibilityItem {
+export interface ToolsItem {
   icon: string;
   title: string;
-  url: string;
 }
 
 export interface FeatureItem {
@@ -11,7 +10,6 @@ export interface FeatureItem {
 }
 
 export interface FooterLink {
-  description: string;
   icon: string;
   url: string;
 }
