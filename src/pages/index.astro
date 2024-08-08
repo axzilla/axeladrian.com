@@ -12,46 +12,53 @@ import { ViewTransitions } from "astro:transitions";
 const { generator } = Astro;
 const title = "Axel Adrian - Ich. Mache. Software.";
 const description = "Axel Adrian - Ich. Mache. Software.";
-
 const siteUrl = Astro.url.origin;
 const image = new URL("/favicon.png", siteUrl).toString();
 const canonicalURL = new URL(Astro.url.pathname, siteUrl);
+const isProd = import.meta.env.PROD;
+const GA_MEASUREMENT_ID = "G-ZQ5RRWQSK8";
 ---
 
 <!doctype html>
 <html lang="de" class="h-full motion-safe:scroll-smooth" data-theme="dark">
   <head>
+    <!-- Google tag (gtag.js) -->
+    {
+      isProd && (
+        <>
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-ZQ5RRWQSK8"
+          />
+          <script src="/js/googleAnalytics.js" />
+        </>
+      )
+    }
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.png" type="image/svg+xml" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={generator} />
-
     <title>{title}</title>
     <meta name="description" content={description} />
-
     <!-- Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
-
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url.href} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
-
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url.href} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={image} />
-
     <ViewTransitions />
-
     <!-- initialize theme -->
     <script is:inline>
       const themeSaved = localStorage.getItem("theme");
