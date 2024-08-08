@@ -17,3 +17,13 @@
   --color-background-offset: theme("colors.gray.800");
   --color-border: theme("colors.gray.50" / 10%);
 }
+
+:root {
+  --font-family-base: "JetBrains Mono", ui-monospace, "Cascadia Mono",
+    "Segoe UI Mono", "Ubuntu Mono", "Roboto Mono", Menlo, Monaco, Consolas,
+    monospace;
+  --font-family-code: "JetBrains Mono", ui-monospace, "Cascadia Mono",
+    "Segoe UI Mono", "Ubuntu Mono", "Roboto Mono", Menlo, Monaco, Consolas,
+    monospace;
+}
+

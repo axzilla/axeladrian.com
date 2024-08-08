@@ -30,6 +30,12 @@ const canonicalURL = new URL(Astro.url.pathname, siteUrl);
     <title>{title}</title>
     <meta name="description" content={description} />
 
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url.href} />
