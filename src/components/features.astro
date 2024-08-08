@@ -5,22 +5,16 @@ import type { FeatureItem } from "~/types";
 
 const features: Array<FeatureItem> = [
   {
-    title: "Strategische Planung",
+    title: "Multi-Plattform-Experte",
     description:
-      "Maßgeschneiderte Lösungen für deine Anforderungen. Durchdacht und zukunftsorientiert.",
+      "Full-Stack Web, native Mobile Apps und Desktop-Anwendungen: Maßgeschneiderte Lösungen für jede Plattform.",
     icon: "mdi:handshake",
   },
   {
-    title: "Effiziente Entwicklung",
+    title: "Full-Cycle Entwickler",
     description:
-      "Robuster, qualitativer Code. Funktional, performant und skalierbar.",
+      "Von der strategischen Planung über Entwicklung und Testing bis zum Deployment und darüber hinaus.",
     icon: "mdi:feather",
-  },
-  {
-    title: "Nahtlose Integration",
-    description:
-      " Sicheres Deployment und stetige Optimierung für langfristigen Projekterfolg.",
-    icon: "mdi:directions-fork",
   },
 ];
 ---
@@ -31,7 +25,7 @@ const features: Array<FeatureItem> = [
     und <span class="text-primary">Code</span>
     bringe ich deine Vision zum Leben.
   </Fragment>
-  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-3">
+  <ul class="grid max-w-4xl grid-cols-2">
     {
       features.map(({ title, description, icon }) => (
         <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
