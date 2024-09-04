@@ -1,0 +1,60 @@
+{
+  "seo": {
+    "title": "Axel Adrian - I. Create. Software.",
+    "description": "Axel Adrian - I. Create. Software."
+  },
+  "header": {
+    "navItems": [
+      {
+        "name": "Hello",
+        "url": "#intro"
+      },
+      {
+        "name": "Craft",
+        "url": "#features"
+      },
+      {
+        "name": "Tools",
+        "url": "#tools"
+      },
+      {
+        "name": "End",
+        "url": "#end"
+      }
+    ]
+  },
+  "splash": {
+    "one": "I",
+    "two": "Create",
+    "three": "Software"
+  },
+  "intro": {
+    "title": "I am Axel",
+    "one": "Software Developer.",
+    "two": "Problem Solver.",
+    "three": "Nerd.",
+    "button_one": "Check my GitHub",
+    "button_two": "Send an Email"
+  },
+  "features": {
+    "title": "My Craft",
+    "text": "With creativity and code I bring your vision to life.",
+    "one": {
+      "title": "Multi-Platform Expert",
+      "text": "Full-Stack Web, native Mobile Apps and Desktop Applications: Tailored solutions for every platform."
+    },
+    "two": {
+      "title": "Full-Cycle Developer",
+      "text": "From strategic planning through development and testing to deployment and beyond."
+    }
+  },
+  "tools": {
+    "title": "My Tools",
+    "text": "Modern solutions for complex challenges."
+  },
+  "end": {
+    "title": "End",
+    "text": "Short-term assignments or long-term engagements? I look forward to your message!."
+  },
+  "languageSwitch": "DE"
+}

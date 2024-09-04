@@ -1,0 +1,60 @@
+{
+  "seo": {
+    "title": "Axel Adrian - Ich. Mache. Software.",
+    "description": "Axel Adrian - Ich. Mache. Software."
+  },
+  "header": {
+    "navItems": [
+      {
+        "name": "Moin",
+        "url": "#intro"
+      },
+      {
+        "name": "Handwerk",
+        "url": "#features"
+      },
+      {
+        "name": "Werkzeuge",
+        "url": "#tools"
+      },
+      {
+        "name": "Ende",
+        "url": "#end"
+      }
+    ]
+  },
+  "splash": {
+    "one": "Ich",
+    "two": "Mache",
+    "three": "Software"
+  },
+  "intro": {
+    "title": "Ich bin Axel",
+    "one": "Software Entwickler.",
+    "two": "Problemlöser.",
+    "three": "Nerd.",
+    "button_one": "Check mein GitHub",
+    "button_two": "Schick ne Mail"
+  },
+  "features": {
+    "title": "Mein Handwerk",
+    "text": "Mit Kreativität und Code bringe ich deine Vision zum Leben.",
+    "one": {
+      "title": "Multi-Plattform-Experte",
+      "text": "Full-Stack Web, native Mobile Apps und Desktop-Anwendungen: Maßgeschneiderte Lösungen für jede Plattform."
+    },
+    "two": {
+      "title": "Full-Cycle Entwickler",
+      "text": "Von der strategischen Planung über Entwicklung und Testing bis zum Deployment und darüber hinaus."
+    }
+  },
+  "tools": {
+    "title": "Meine Werkzeuge",
+    "text": "Moderne Lösungen für komplexe Herrausforderungen."
+  },
+  "end": {
+    "title": "Ende",
+    "text": "Kurzfristige Einsätze oder langfristige Engagements? Ich freue mich auf deine Nachricht!."
+  },
+  "languageSwitch": "EN"
+}

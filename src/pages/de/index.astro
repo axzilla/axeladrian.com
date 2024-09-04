@@ -9,10 +9,9 @@ import Splash from "~/components/splash.astro";
 import "~/styles/index.css";
 import { ViewTransitions } from "astro:transitions";
 import { getRelativeLocaleUrl } from "astro:i18n";
-import type { WebsiteContent } from "~/types";
 
 const lang = Astro.currentLocale;
-const translations: WebsiteContent = await import(`../locales/${lang}.json`);
+const translations = await import(`../../locales/${lang}.json`);
 const { generator } = Astro;
 const title = translations.seo.title;
 const description = translations.seo.description;

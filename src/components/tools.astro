@@ -1,7 +1,7 @@
 ---
 import ToolsList from "~/components/tools-list.astro";
 import ContentSection from "~/components/content-section.astro";
-import type { ToolsItem } from "~/types";
+import type { ToolsItem, WebsiteContent } from "~/types";
 
 const tools: Array<ToolsItem> = [
   {
@@ -65,11 +65,13 @@ const tools: Array<ToolsItem> = [
     icon: "tools/docker",
   },
 ];
+
+const { translations } = Astro.props as { translations: WebsiteContent };
 ---
 
-<ContentSection title="Meine Werkzeuge" id="tools">
-  <Fragment slot="lead"
-    >Moderne <span class="text-primary">Lösungen</span> für komplexe Herrausforderungen.
+<ContentSection title={translations.tools.title} id="tools">
+  <Fragment slot="lead">
+    {translations.tools.text}
+    <ToolsList items={tools} />
   </Fragment>
-  <ToolsList items={tools} />
 </ContentSection>

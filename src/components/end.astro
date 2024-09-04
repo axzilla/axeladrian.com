@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import ContentSection from "~/components/content-section.astro";
-import type { FooterLink } from "~/types";
+import type { FooterLink, WebsiteContent } from "~/types";
 
 const links: Array<FooterLink> = [
   {
@@ -21,12 +21,13 @@ const links: Array<FooterLink> = [
     icon: "fa-solid:envelope",
   },
 ];
+
+const { translations } = Astro.props as { translations: WebsiteContent };
 ---
 
-<ContentSection title="Ende" id="end">
+<ContentSection title={translations.end.title} id="end">
   <Fragment slot="lead">
-    Kurzfristige Einsätze oder langfristige Engagements? Ich freue mich auf
-    deine Nachricht!
+    {translations.end.text}
   </Fragment>
   <ul class="flex gap-8">
     {

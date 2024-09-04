@@ -1,14 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
-import type { NavItem } from "~/types";
+import type { WebsiteContent } from "~/types";
 
-const navItems: Array<NavItem> = [
-  { title: "Moin", url: "#intro" },
-  { title: "Mein Handwerk", url: "#features" },
-  { title: "Meine Werkzeuge", url: "#tools" },
-  { title: "Ende", url: "#end" },
-];
+const { translations } = Astro.props as { translations: WebsiteContent };
 ---
 
 <header
@@ -23,10 +18,10 @@ const navItems: Array<NavItem> = [
       <nav class="hidden sm:block">
         <ul class="flex items-center gap-6">
           {
-            navItems.map(({ title, url }) => (
+            translations.header.navItems.map(({ name, url }) => (
               <li>
                 <a class="font-bold text-sm hover:text-primary" href={url}>
-                  {title}
+                  {name}
                 </a>
               </li>
             ))
@@ -62,13 +57,13 @@ const navItems: Array<NavItem> = [
           <nav>
             <ul class="flex flex-col">
               {
-                navItems.map(({ title, url }) => (
+                translations.header.navItems.map(({ name, url }) => (
                   <li>
                     <a
                       class="block py-4 text-center font-bold text-xl hover:text-primary"
                       href={url}
                     >
-                      {title}
+                      {name}
                     </a>
                   </li>
                 ))
