@@ -8,25 +8,34 @@ const { translations } = Astro.props as { translations: WebsiteContent };
 
 <ContentSection title={translations.intro.title} id="intro">
   <Fragment slot="lead">
-    {translations.intro.one}
-    <br />{translations.intro.two}
-    <br />{translations.intro.three}</Fragment
-  >
-  <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
+    <div
+      set:html={translations.intro.text}
+      class="grid max-w-4xl text-center text-offset text-lg"
+    />
+  </Fragment>
+
+  <div class="grid grid-cols-1 gap-2 sm:grid-cols-1">
     <a
       href="https://github.com/axzilla"
       target="_blank"
       class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 hover:text-primary"
     >
-      <Icon name="mdi:telescope" class="size-8" />
+      <!-- <Icon name="mdi:telescope" class="size-8" /> -->
       <span>{translations.intro.button_one}</span>
     </a>
     <a
       href="mailto:hello@axeladrian.com"
       class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 hover:text-primary"
     >
-      <Icon name="mdi:rocket" class="size-8" />
+      <!-- <Icon name="mdi:rocket" class="size-8" /> -->
       <span>{translations.intro.button_two}</span>
+    </a>
+    <a
+      href="https://x.com/_axzilla"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 hover:text-primary"
+    >
+      <!-- <Icon name="mdi:post" class="size-8" /> -->
+      <span>{translations.intro.button_three}</span>
     </a>
   </div>
 </ContentSection>

@@ -32,11 +32,10 @@ export interface WebsiteContent {
   };
   intro: {
     title: string;
-    one: string;
-    two: string;
-    three: string;
+    text: string;
     button_one: string;
     button_two: string;
+    button_three: string;
   };
   features: {
     title: string;

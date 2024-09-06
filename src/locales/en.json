@@ -30,11 +30,10 @@
   },
   "intro": {
     "title": "I am Axel",
-    "one": "Software Developer.",
-    "two": "Problem Solver.",
-    "three": "Nerd.",
+    "text": "Startup enthusiast and tech problem-solver with over 6 years of experience: <br/><br/> I turn complex challenges into scalable solutions. From health-tech to e-commerce, I've leveraged Go, React, and Flutter to craft innovative MVPs that rapidly propel startups from concept to market.<br/><br/> My entrepreneurial spirit and years in the field drive me to do more than just write code — I solve real business problems. Currently, I'm diving deep into AI development to give your applications an intelligence boost.<br/><br/> Ready to bring your startup idea to life with experience-driven innovation and lightning-fast MVP strategies?",
     "button_one": "Check my GitHub",
-    "button_two": "Send an Email"
+    "button_two": "Send an Email",
+    "button_three": "Follow me on X"
   },
   "features": {
     "title": "My Craft",
@@ -54,7 +53,7 @@
   },
   "end": {
     "title": "End",
-    "text": "Short-term assignments or long-term engagements? I look forward to your message!."
+    "text": "I don't just write code; I solve problems. Whether it's a short-term project or a long-term vision, I'm here to turn your ideas into reality with creativity, expertise, and a dash of nerd enthusiasm."
   },
   "languageSwitch": "DE"
 }

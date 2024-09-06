@@ -30,11 +30,10 @@
   },
   "intro": {
     "title": "Ich bin Axel",
-    "one": "Software Entwickler.",
-    "two": "Problemlöser.",
-    "three": "Nerd.",
+    "text": "Startup-Enthusiast und Tech-Problemlöser mit über 6 Jahren Erfahrung: <br/><br/> Ich verwandle komplexe Herausforderungen in skalierbare Lösungen. Von Health-Tech bis E-Commerce habe ich mit Go, React und Flutter innovative MVPs entwickelt, die Startups schnell vom Konzept zur Marktreife bringen.<br/><br/> Mein Unternehmergeist und meine langjährige Erfahrung treiben mich an, mehr zu tun als nur Code zu schreiben – ich löse echte Geschäftsprobleme. Aktuell tauche ich tief in die KI-Entwicklung ein, um deinen Anwendungen einen Intelligenzschub zu geben.<br/><br/> Bist du bereit, deine Startup-Idee mit erfahrungsbasierter Innovation und blitzschnellen MVP-Strategien zum Leben zu erwecken?",
     "button_one": "Check mein GitHub",
-    "button_two": "Schick ne Mail"
+    "button_two": "Schick ne Mail",
+    "button_three": "Folg mir auf X"
   },
   "features": {
     "title": "Mein Handwerk",
@@ -54,7 +53,7 @@
   },
   "end": {
     "title": "Ende",
-    "text": "Kurzfristige Einsätze oder langfristige Engagements? Ich freue mich auf deine Nachricht!."
+    "text": "Ich schreibe nicht einfach nur Code; ich löse Probleme. Ob kurzfristiges Projekt oder langfristige Vision - ich bin hier, um deine Ideen mit Kreativität, Expertise und einer Prise Nerd-Enthusiasmus in die Realität umzusetzen."
   },
   "languageSwitch": "EN"
 }
