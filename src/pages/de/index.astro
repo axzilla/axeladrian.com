@@ -89,6 +89,7 @@ const isProd = import.meta.env.PROD;
     <a
       href={getRelativeLocaleUrl(lang === "de" ? "en" : "de", "")}
       class="fixed bottom-8 right-4 z-50 rounded-full bg-secondary px-4 py-2 text-white transition-colors hover:bg-gray-700"
+      data-astro-reload
     >
       {translations.languageSwitch}
     </a>
