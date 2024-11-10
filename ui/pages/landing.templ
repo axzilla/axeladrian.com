@@ -1,0 +1,21 @@
+package pages
+
+import (
+	"github.com/axzilla/goilerplate-quickstart/ui/layouts"
+	"github.com/axzilla/goilerplate/pkg/components"
+	"github.com/axzilla/goilerplate/pkg/icons"
+)
+
+templ Landing() {
+	@layouts.BaseLayout() {
+		<div class="flex gap-2 h-screen items-center justify-center">
+			@components.Button(components.ButtonProps{
+				Class:      "flex gap-2",
+				Attributes: templ.Attributes{"@click": "alert('Hey Dude!')"},
+			}) {
+				@icons.Heart(icons.IconProps{})
+				Click Me
+			}
+		</div>
+	}
+}
