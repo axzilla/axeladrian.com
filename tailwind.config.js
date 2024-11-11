@@ -1,9 +1,20 @@
 import { fontFamily } from "tailwindcss/defaultTheme";
+import { execSync } from "child_process";
+
+// GOPATH ermitteln
+const goPath = execSync("go env GOPATH").toString().trim();
+// Pfad zum Modul konstruieren - wir nehmen die neueste Version mit *
+const goilerplatePath = `${goPath}/pkg/mod/github.com/axzilla/goilerplate@*`;
 
 /** @type {import('tailwindcss').Config} */
 const config = {
   darkMode: ["class"],
-  content: ["./**/*.html", "./**/*.templ", "./**/*.go", "*"],
+  content: [
+    "./**/*.html",
+    "./**/*.templ",
+    "./**/*.go",
+    `${goilerplatePath}/**/*.{go,templ}`,
+  ],
   safelist: ["dark"],
   theme: {
     container: {

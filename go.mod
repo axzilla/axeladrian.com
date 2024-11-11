@@ -1,4 +1,4 @@
-module github.com/axzilla/goilerplate-quickstart
+module github.com/axzilla/axeladrian
 
 go 1.22.4
 
