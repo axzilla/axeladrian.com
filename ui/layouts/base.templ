@@ -1,0 +1,44 @@
+package layouts
+
+import "github.com/axzilla/goilerplate/pkg/utils"
+import "github.com/axzilla/axeladrian/ui/modules"
+
+templ BaseLayout() {
+	<!DOCTYPE html>
+	<html lang="en" class="h-full">
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			@utils.AlpineJS()
+			<link href="/assets/css/output.css" rel="stylesheet"/>
+			<style>
+        [x-cloak] { display: none !important; }
+      </style>
+			<script>
+        // Minimal initial theme setup to prevent flash
+        document.documentElement.classList.toggle('dark', localStorage.getItem('appTheme') === 'dark');
+      </script>
+		</head>
+		<body
+			x-data="{
+                isDark: localStorage.getItem('appTheme') === 'dark',
+                sidebarOpen: false,
+                toggleTheme() {
+                    this.isDark = !this.isDark;
+                    localStorage.setItem('appTheme', this.isDark ? 'dark' : 'light');
+                    document.documentElement.classList.toggle('dark', this.isDark);
+                }
+            }"
+			x-cloak
+			class="h-full flex flex-col transition-colors duration-200"
+			:class="{ 'bg-white text-black': !isDark, 'text-white': isDark }"
+		>
+			@modules.Navbar()
+			{ children... }
+			<div class="fixed bottom-4 right-4 z-50">
+				@modules.ThemeSwitcher()
+			</div>
+			@modules.Madewith()
+		</body>
+	</html>
+}

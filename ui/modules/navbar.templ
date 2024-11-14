@@ -1,0 +1,15 @@
+package modules
+
+import (
+	"github.com/axzilla/axeladrian/ui/svg"
+)
+
+templ Navbar() {
+	<nav class="border-b py-3">
+		<div class="container mx-auto px-4 flex justify-center items-center">
+			<a href="/" class="flex">
+				@svg.Sunglass("h-6")
+			</a>
+		</div>
+	</nav>
+}

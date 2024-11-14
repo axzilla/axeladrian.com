@@ -1,0 +1,171 @@
+package pages
+
+import (
+	"github.com/axzilla/axeladrian/ui/layouts"
+	"github.com/axzilla/goilerplate/pkg/components"
+	"github.com/axzilla/goilerplate/pkg/icons"
+)
+
+templ Landing() {
+	@layouts.BaseLayout() {
+		@HeroSection()
+		@AboutSection()
+		@ProjectsSection()
+		@WorkWithMeSection()
+		@ContactSection()
+	}
+}
+
+templ HeroSection() {
+	<script src="/assets/js/starfield.js" defer></script>
+	<section class="h-screen flex items-center justify-center py-20 px-4 relative bg-black">
+		<div id="starfield" class="absolute inset-0">
+			<canvas id="starfield-canvas"></canvas>
+		</div>
+		<div class="text-center relative z-10">
+			<h1 class="text-5xl md:text-7xl font-bold mb-2 text-white">
+				Axel Adrian
+			</h1>
+			<p class="text-xl md:text-2xl text-muted-foreground mb-2">
+				Developer & Problem Solver
+			</p>
+			<div class="animate-float">
+				<img class="animate-float h-36 m-auto" src="assets/img/me.png"/>
+			</div>
+		</div>
+	</section>
+}
+
+templ AboutSection() {
+	<section id="about" class="py-20 px-4 bg-muted/50">
+		<div class="max-w-3xl mx-auto">
+			<h2 class="text-3xl font-bold mb-8">About Me</h2>
+			<div class="prose">
+				<p class="text-lg mb-6">
+					With over 6 years of experience as a Developer, I specialize in building scalable solutions 
+					across the full stack. Currently working remotely from Bangkok, I combine deep technical 
+					expertise with a comprehensive understanding of the complete developer lifecycle.
+				</p>
+				<p class="text-lg mb-6">
+					My tech journey spans modern web development with TypeScript (React, Next.js, Svelte, Node.js), 
+					mobile apps (Flutter/Dart), and Go backend development. Whether it's building robust APIs, 
+					crafting responsive frontends, or developing mobile applications, I bring a holistic approach 
+					to every project.
+				</p>
+				<p class="text-lg">
+					Check out my open-source work and follow my development insights on 
+					<a
+						href="https://twitter.com/_axzilla"
+						target="_blank"
+						class="font-medium underline underline-offset-4 hover:text-primary/90"
+					>Twitter/X</a>.
+				</p>
+			</div>
+		</div>
+	</section>
+}
+
+templ ProjectsSection() {
+	<section id="projects" class="py-20 px-4">
+		<div class="max-w-3xl mx-auto">
+			<h2 class="text-3xl font-bold mb-12 text-center">Projects</h2>
+			<div class="grid md:grid-cols-2 gap-8">
+				@ProjectCard(
+					"Goilerplate",
+					"Modern UI Components for Go & Templ.",
+					"https://github.com/axzilla/goilerplate",
+				)
+				@ProjectCard(
+					"BoilerBrew",
+					"Open-source SaaS starter kit featuring a Law of 100 challenge app, built with SvelteKit + PocketBase.",
+					"https://github.com/axzilla/boilerbrew",
+				)
+				@ProjectCard(
+					"Stackpack",
+					"Transform your GitHub repositories into AI-friendly formats, perfect for LLMs like Claude, ChatGPT, and Gemini.",
+					"https://github.com/axzilla/stackpack",
+				)
+				@ProjectCard(
+					"Dotfiles",
+					"My development setup featuring Neovim, tmux, wezterm, and custom configurations for maximum productivity.",
+					"https://github.com/axzilla/dotfiles",
+				)
+			</div>
+		</div>
+	</section>
+}
+
+templ ProjectCard(title, description, link string) {
+	@components.Card(components.CardProps{Class: "hover:bg-muted/30 transition ease-in-out"}) {
+		@components.CardHeader() {
+			@components.CardTitle() {
+				{ title }
+			}
+			@components.CardDescription() {
+				{ description }
+			}
+		}
+		@components.CardFooter() {
+			<a
+				href={ templ.SafeURL(link) }
+				class="hover:opacity-70 transition-colors"
+				target="_blank"
+				rel="noopener"
+			>
+				View Project →
+			</a>
+		}
+	}
+}
+
+templ WorkWithMeSection() {
+	<section id="work" class="py-20 px-4 bg-muted/50">
+		<div class="max-w-3xl mx-auto">
+			<h2 class="text-3xl font-bold mb-8">Work With Me</h2>
+			<div class="prose">
+				<p class="text-lg mb-6">
+					Looking for a developer who bridges the gap between business needs and technical solutions? 
+					From Go backends to React frontends, or full Flutter mobile apps - I bring extensive 
+					experience across the modern tech stack.
+				</p>
+				<p class="text-lg mb-6">
+					Working remotely worldwide, I offer a proven track record of successful remote collaboration 
+					and clear communication. With professional invoicing through my US LLC, you can focus on 
+					what matters: building great software.
+				</p>
+				<div class="mt-8">
+					@components.Button(components.ButtonProps{Text: "Let's Talk About Your Project", Href: "mailto:hello@axeladrian.com"})
+				</div>
+			</div>
+		</div>
+	</section>
+}
+
+templ ContactSection() {
+	<section id="contact" class="py-20 px-4">
+		<div class="max-w-2xl mx-auto text-center">
+			<h2 class="text-3xl font-bold">Get In Touch</h2>
+			<p class="text-muted-foreground mb-8">
+				Feel free to reach out for collaborations or just to say hi!
+			</p>
+			<div class="flex justify-center gap-8 mb-8">
+				<a href="https://github.com/axzilla" class="text-foreground/80 hover:text-primary" target="_blank">
+					<span class="sr-only">GitHub</span>
+					@icons.Github(icons.IconProps{})
+				</a>
+				<a href="https://twitter.com/_axzilla" class="text-foreground/80 hover:text-primary" target="_blank">
+					<span class="sr-only">Twitter</span>
+					@icons.Twitter(icons.IconProps{})
+				</a>
+				<a href="https://www.linkedin.com/in/axeladrian85" class="text-foreground/80 hover:text-primary" target="_blank">
+					<span class="sr-only">LinkedIn</span>
+					@icons.Linkedin(icons.IconProps{})
+				</a>
+				<a href="mailto:hello@axeladrian.com" class="text-foreground/80 hover:text-primary">
+					<span class="sr-only">Email</span>
+					@icons.Mailbox(icons.IconProps{})
+				</a>
+			</div>
+		</div>
+	</section>
+}
