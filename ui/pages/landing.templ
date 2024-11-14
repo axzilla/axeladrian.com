@@ -74,32 +74,28 @@ templ ProjectsSection() {
 					"Goilerplate",
 					"Modern UI Components for Go & Templ.",
 					"https://github.com/axzilla/goilerplate",
-					[]string{"Go", "HTMX", "TailwindCSS"},
 				)
 				@ProjectCard(
 					"BoilerBrew",
 					"Open-source SaaS starter kit featuring a Law of 100 challenge app, built with SvelteKit + PocketBase.",
 					"https://github.com/axzilla/boilerbrew",
-					[]string{"SvelteKit", "PocketBase", "Shadcn"},
 				)
 				@ProjectCard(
 					"Stackpack",
 					"Transform your GitHub repositories into AI-friendly formats, perfect for LLMs like Claude, ChatGPT, and Gemini.",
 					"https://github.com/axzilla/stackpack",
-					[]string{"Go", "CLI", "Web"},
 				)
 				@ProjectCard(
 					"Dotfiles",
 					"My development setup featuring Neovim, tmux, wezterm, and custom configurations for maximum productivity.",
 					"https://github.com/axzilla/dotfiles",
-					[]string{"Neovim", "tmux", "wezterm"},
 				)
 			</div>
 		</div>
 	</section>
 }
 
-templ ProjectCard(title, description, link string, tags []string) {
+templ ProjectCard(title, description, link string) {
 	@components.Card(components.CardProps{Class: "hover:bg-muted/30 transition ease-in-out"}) {
 		@components.CardHeader() {
 			@components.CardTitle() {
@@ -108,15 +104,6 @@ templ ProjectCard(title, description, link string, tags []string) {
 			@components.CardDescription() {
 				{ description }
 			}
-		}
-		@components.CardContent() {
-			<div class="flex flex-wrap gap-2">
-				for _, tag := range tags {
-					<span class="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm">
-						{ tag }
-					</span>
-				}
-			</div>
 		}
 		@components.CardFooter() {
 			<a
