@@ -25,6 +25,16 @@ const config = {
       },
     },
     extend: {
+      animation: {
+        float: "float 6s ease-in-out infinite",
+      },
+      keyframes: {
+        float: {
+          "0%": { transform: "translateY(-5px)" },
+          "50%": { transform: "translateY(5px)" },
+          "100%": { transform: "translateY(-5px)" },
+        },
+      },
       colors: {
         border: "hsl(var(--border) / <alpha-value>)",
         input: "hsl(var(--input) / <alpha-value>)",

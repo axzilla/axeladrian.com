@@ -17,15 +17,21 @@ templ Landing() {
 }
 
 templ HeroSection() {
-	<section class="h-screen flex items-center justify-center py-20 px-4">
-		<div class="text-center">
-			<h1 class="text-5xl md:text-7xl font-bold mb-2">
+	<script src="/assets/js/starfield.js" defer></script>
+	<section class="h-screen flex items-center justify-center py-20 px-4 relative bg-black">
+		<div id="starfield" class="absolute inset-0">
+			<canvas id="starfield-canvas"></canvas>
+		</div>
+		<div class="text-center relative z-10">
+			<h1 class="text-5xl md:text-7xl font-bold mb-2 text-white">
 				Axel Adrian
 			</h1>
 			<p class="text-xl md:text-2xl text-muted-foreground mb-2">
 				Developer & Problem Solver
 			</p>
-			@components.Avatar(components.AvatarProps{Class: "h-36 w-36", Size: components.AvatarSizeLarge, ImageSrc: "https://avatars.githubusercontent.com/u/26936893?v=4"})
+			<div class="animate-float">
+				<img class="animate-float h-36 m-auto" src="assets/img/me.png"/>
+			</div>
 		</div>
 	</section>
 }
@@ -63,12 +69,18 @@ templ ProjectsSection() {
 	<section id="projects" class="py-20 px-4">
 		<div class="max-w-6xl mx-auto">
 			<h2 class="text-3xl font-bold mb-12 text-center">Projects</h2>
-			<div class="grid md:grid-cols-3 gap-8">
+			<div class="grid md:grid-cols-2 gap-8">
 				@ProjectCard(
 					"Goilerplate",
-					"A modern Go UI library combining the best of both worlds: Go's performance with modern web development practices.",
+					"Modern UI Components for Go & Templ.",
 					"https://github.com/axzilla/goilerplate",
 					[]string{"Go", "HTMX", "TailwindCSS"},
+				)
+				@ProjectCard(
+					"BoilerBrew",
+					"Open-source SaaS starter kit featuring a Law of 100 challenge app, built with SvelteKit + PocketBase.",
+					"https://github.com/axzilla/boilerbrew",
+					[]string{"SvelteKit", "PocketBase", "Shadcn"},
 				)
 				@ProjectCard(
 					"Stackpack",
@@ -78,7 +90,7 @@ templ ProjectsSection() {
 				)
 				@ProjectCard(
 					"Dotfiles",
-					"My complete development setup featuring Neovim, tmux, wezterm, and custom configurations for maximum productivity.",
+					"My development setup featuring Neovim, tmux, wezterm, and custom configurations for maximum productivity.",
 					"https://github.com/axzilla/dotfiles",
 					[]string{"Neovim", "tmux", "wezterm"},
 				)
