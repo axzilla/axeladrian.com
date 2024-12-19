@@ -1,5 +1,5 @@
 # Build-Stage
-FROM golang:1.22-alpine AS build
+FROM golang:1.23-alpine AS build
 WORKDIR /app
 
 # Copy the source code
