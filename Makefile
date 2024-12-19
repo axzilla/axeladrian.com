@@ -17,7 +17,7 @@ server:
 
 # Run tailwindcss to generate the styles.css bundle in watch mode.
 tailwind:
-	npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch
+	tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch
 
 # Start development server
 dev:

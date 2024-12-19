@@ -1,26 +1,54 @@
 package modules
 
-import "github.com/axzilla/goilerplate/pkg/icons"
-import "github.com/axzilla/goilerplate/pkg/components"
+import (
+	"github.com/axzilla/templui/pkg/components"
+	"github.com/axzilla/templui/pkg/icons"
+)
 
-templ ThemeSwitcher() {
+templ themeSwitcherHandler() {
+	{{ handle := templ.NewOnceHandle() }}
+	@handle.Once() {
+		<script nonce={ templ.GetNonce(ctx) }>
+			document.addEventListener('alpine:init', () => {
+				Alpine.data('themeSwitcherHandler', () => ({
+					isDarkMode() {
+						return this.isDark
+					},
+					isLightMode() {
+						return !this.isDark
+					}
+				}))
+			})
+		</script>
+	}
+}
+
+type ThemeSwitcherProps struct {
+	Class string
+}
+
+templ ThemeSwitcher(props ThemeSwitcherProps) {
+	@themeSwitcherHandler()
 	@components.Button(components.ButtonProps{
-		Size:     components.ButtonIcon,
-		Variant:  components.Ghost,
+		Size:     components.ButtonSizeIcon,
+		Variant:  components.ButtonVariantGhost,
 		IconLeft: templ.Component(DynamicThemeIcon()),
+		Class:    props.Class,
 		Attributes: templ.Attributes{
-			"@click": "toggleTheme()",
+			"@click": "toggleTheme",
 		},
 	})
 }
 
 templ DynamicThemeIcon() {
-	<span x-show="isDark" class="block">
-		@LightIcon()
-	</span>
-	<span x-show="!isDark" class="block">
-		@DarkIcon()
-	</span>
+	<div x-data="themeSwitcherHandler">
+		<span x-show="isDarkMode" class="block">
+			@LightIcon()
+		</span>
+		<span x-show="isLightMode" class="block">
+			@DarkIcon()
+		</span>
+	</div>
 }
 
 templ DarkIcon() {

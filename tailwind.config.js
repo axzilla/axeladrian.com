@@ -1,9 +1,3 @@
-import { fontFamily } from "tailwindcss/defaultTheme";
-import { execSync } from "child_process";
-
-const goPath = execSync("go env GOPATH").toString().trim();
-const goilerplatePath = `${goPath}/pkg/mod/github.com/axzilla/goilerplate@*`;
-
 /** @type {import('tailwindcss').Config} */
 const config = {
   darkMode: ["class"],
@@ -11,7 +5,7 @@ const config = {
     "./**/*.html",
     "./**/*.templ",
     "./**/*.go",
-    `${goilerplatePath}/**/*.{go,templ}`,
+    "/Users/axeladrian/go/pkg/mod/github.com/axzilla/templui@*/**/*.{go,templ}",
   ],
   safelist: ["dark"],
   theme: {
@@ -23,15 +17,9 @@ const config = {
       },
     },
     extend: {
-      animation: {
-        float: "float 6s ease-in-out infinite",
-      },
-      keyframes: {
-        float: {
-          "0%": { transform: "translateY(-5px)" },
-          "50%": { transform: "translateY(5px)" },
-          "100%": { transform: "translateY(-5px)" },
-        },
+      fontFamily: {
+        jetbrains: ["JetBrains Mono", "monospace"],
+        inter: ["Inter", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border) / <alpha-value>)",
@@ -72,9 +60,6 @@ const config = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
-      },
-      fontFamily: {
-        sans: ["Inter", ...fontFamily.sans],
       },
     },
   },
