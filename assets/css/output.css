@@ -1791,10 +1791,6 @@ body {
   text-align: center;
 }
 
-.font-inter {
-  font-family: Inter, system-ui, sans-serif;
-}
-
 .font-jetbrains {
   font-family: JetBrains Mono, monospace;
 }
