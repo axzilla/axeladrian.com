@@ -43,10 +43,12 @@ templ BaseLayout() {
 			@helpers.ComponentScripts()
 			<!-- Theme switcher script -->
 			@ThemeSwitcherScript()
-			// Preconnect to Google Fonts
 			<link rel="preconnect" href="https://fonts.googleapis.com"/>
+			<!-- Preconnect to Google Fonts -->
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 			<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+			<!-- Plausible -->
+			<script defer data-domain="axeladrian.com" src="https://plausible.axeladrian.com/js/script.js"></script>
 		</head>
 		<body
 			x-data="themeHandler"

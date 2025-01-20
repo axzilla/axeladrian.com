@@ -7,6 +7,6 @@ require (
 	github.com/joho/godotenv v1.5.1
 )
 
-require github.com/axzilla/templui v0.26.1
+require github.com/axzilla/templui v0.29.1
 
 require github.com/Oudwins/tailwind-merge-go v0.2.0 // indirect
