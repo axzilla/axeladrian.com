@@ -5,17 +5,8 @@ WORKDIR /app
 # Copy the source code
 COPY . .
 
-# Install templ
-RUN go install github.com/a-h/templ/cmd/templ@latest
-
-# Generate templ files
-RUN templ generate
-
-# Install build dependencies
-RUN apk add --no-cache gcc musl-dev
-
 # Build the application
-RUN CGO_ENABLED=1 GOOS=linux go build -o main ./main.go
+RUN go build -o main ./main.go
 
 # Deploy-Stage
 FROM alpine:3.20.2
